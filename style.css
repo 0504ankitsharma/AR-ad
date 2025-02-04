@@ -7,3 +7,16 @@ body {
     width: 100vw;
     height: 100vh;
   }
+  
+  #compatibility-warning {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+  }

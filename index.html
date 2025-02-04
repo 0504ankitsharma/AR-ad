@@ -14,28 +14,35 @@
   <!-- A-Frame Scene -->
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
     <!-- Marker-based AR -->
-    <a-marker type="pattern" url="assets/pattern-marker.patt">
-        <a-video
-          id="ar-video"
-          src="assets/your-video.mp4"
-          width="1.6"
-          height="0.9"
-          position="0 0.8 0"
-          rotation="-90 0 0"
-          autoplay
-          loop
-        ></a-video>
-        <a-text
-          value="Pause"
-          position="-0.5 0.5 0"
-          color="white"
-          align="center"
-          onclick="toggleVideo()"
-        ></a-text>
-      </a-marker>
+    <a-marker preset="hiro">
+      <!-- Video overlay -->
+      <a-video
+        id="ar-video"
+        src="assets/your-video.mp4"
+        width="1.6"
+        height="0.9"
+        position="0 0.8 0"
+        rotation="-90 0 0"
+        autoplay
+        loop
+      ></a-video>
+      <!-- Optional: Add a pause/play button -->
+      <a-text
+        value="Pause"
+        position="-0.5 0.5 0"
+        color="white"
+        align="center"
+        onclick="toggleVideo()"
+      ></a-text>
+    </a-marker>
     <!-- Camera -->
     <a-entity camera></a-entity>
   </a-scene>
+
+  <!-- Browser Compatibility Check -->
+  <div id="compatibility-warning" style="display: none; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: red; color: white; padding: 10px; border-radius: 5px;">
+    Your browser does not support AR. Please use Chrome or Safari.
+  </div>
 
   <!-- Include custom JavaScript -->
   <script src="script.js"></script>
