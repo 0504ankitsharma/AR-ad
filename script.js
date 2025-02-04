@@ -16,3 +16,8 @@ if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       document.querySelector("a-text").setAttribute("value", "Pause");
     }
   }
+
+  // Check for browser compatibility
+if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    document.getElementById("compatibility-warning").style.display = "block";
+  }
